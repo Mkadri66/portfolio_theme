@@ -1,0 +1,39 @@
+{
+  "name": "portfolio_theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "webpack-cli": "^3.2.1",
+    "webpack": "^4.28.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-core": "^7.2.2",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^2.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "sass-loader": "^7.1.0",
+    "uglifyjs-webpack-plugin": "^2.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode development",
+    "dist": "webpack --mode production",
+    "watch": "webpack --watch --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mkadri66/portoflio_theme.git"
+  },
+  "keywords": [],
+  "author": "Mustapha Kadri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mkadri66/portoflio_theme/issues"
+  },
+  "homepage": "https://github.com/Mkadri66/portoflio_theme#readme"
+}
