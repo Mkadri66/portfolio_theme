@@ -18,6 +18,10 @@
  *
  * @link http://codex.wordpress.org/Child_Themes
  */
+
+define('PORTFOLIO_CSS_VERSION', '0.0.1');
+define('PORTFOLIO_JS_VERSION', '0.0.1');
+
 function oceanwp_child_enqueue_parent_style() {
     // Dynamically get version number of the parent stylesheet (lets browsers re-cache your stylesheet when you update your theme)
     $theme   = wp_get_theme( 'OceanWP' );
@@ -26,7 +30,7 @@ function oceanwp_child_enqueue_parent_style() {
     wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array( 'oceanwp-style' ), $version );
 
     // register webpack stylesheet and js with theme
-    wp_enqueue_style( 'site_main_css', get_stylesheet_directory_uri() . '/css/build/main.min.css' );
+    wp_enqueue_style( 'site_main_css', get_stylesheet_directory_uri() . '/css/build/main.min.css', [] , PORTFOLIO_CSS_VERSION , 'all');
     wp_enqueue_script( 'site_main_js', get_stylesheet_directory_uri() . '/js/build/app.js' , null , null , true );
 
 }
