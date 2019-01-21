@@ -1,3 +1,14 @@
-body {
-    background-color: coral;
-}
+// Variables
+@import 'variables.scss';
+
+// Menus
+@import 'menus/main_menu';
+@import 'menus/secondary_menu';
+
+// Layouts
+@import 'layout/home';
+@import 'layout/single';
+
+// Footer
+@import 'footer/main_footer';
+@import 'footer/secondary_footer';
