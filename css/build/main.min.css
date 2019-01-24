@@ -2,3 +2,9 @@
   .header_home {
     padding-top: 110px !important; } }
 
+#right-sidebar {
+  display: none; }
+
+#primary {
+  width: 100%; }
+
