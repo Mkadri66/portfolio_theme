@@ -1,8 +1,9 @@
 // Variables
 @import 'variables.scss';
 
-// Bootstrap 
-@import 'custom';
+//  Globals
+
+@import 'global';
 
 // Menus
 @import 'menus/main_menu';
@@ -11,6 +12,7 @@
 // Layouts
 @import 'layout/home';
 @import 'layout/single';
+@import 'layout/realisations';
 
 // Footer
 @import 'footer/main_footer';

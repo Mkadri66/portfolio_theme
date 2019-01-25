@@ -28,44 +28,52 @@ get_header(); ?>
 				// Elementor `single` location
 				if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'single' ) ) {
 					
-					// Start loop
-					while ( have_posts() ) : the_post();
+					?>
+					<div class="realisations">
 
-							// EDD Page
-							if ( is_singular( 'download') ) {
-								get_template_part( 'partials/edd/single' );
-							}
+						<?php 
+						// Start loop
+						while ( have_posts() ) : the_post();
 
-							// Single Page
-							elseif ( is_singular( 'page' ) ) {
+								// EDD Page
+								if ( is_singular( 'download') ) {
+									get_template_part( 'partials/edd/single' );
+								}
 
-								get_template_part( 'partials/page/layout' );
+								// Single Page
+								elseif ( is_singular( 'page' ) ) {
 
-							}
+									get_template_part( 'partials/page/layout' );
 
-							// Library post types
-		    				elseif ( is_singular( 'oceanwp_library' )
-		    						|| is_singular( 'elementor_library' ) ) {
+								}
 
-		    					get_template_part( 'partials/library/layout' );
+								// Library post types
+								elseif ( is_singular( 'oceanwp_library' )
+										|| is_singular( 'elementor_library' ) ) {
 
-		    				}
+									get_template_part( 'partials/library/layout' );
 
-							// All other post types.
-							else {
-								// Templates realisations
-								get_template_part( 'partials/single/layout', get_post_type() );
-								the_terms( $post->ID, 'langages', 'Langages : ' ) ;  ?> <br>
-                                <?php the_terms( $post->ID, 'annees', 'Année(s) du projet : ' ) ; ?><br> 
-								<?php the_terms( $post->ID, 'framework', 'Framework(s) : ' ) ; ?> <br> 
-								<?php
-		  					}
+								}
 
-					endwhile;
+								// All other post types.
+								else {
+									// Templates realisations
+									?> 
+									<div class="realisation">
+										<?php get_template_part( 'partials/single/layout', get_post_type() );
+										the_terms( $post->ID, 'langages', 'Langages : ' ) ;  ?> <br>
+										<?php the_terms( $post->ID, 'annees', 'Année(s) du projet : ' ) ; ?><br> 
+										<?php the_terms( $post->ID, 'framework', 'Framework(s) : ' ) ; ?> <br>
+									</div>
+									<?php
+								} 
+						endwhile;
+						?>
+					</div>
+				<?php
+				}
 
-				} ?>
-
-				<?php do_action( 'ocean_after_content_inner' ); ?>
+				do_action( 'ocean_after_content_inner' ); ?>
 
 			</div><!-- #content -->
 

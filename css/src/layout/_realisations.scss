@@ -1,0 +1,10 @@
+.realisations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+
+    .realisation {
+        margin: 0 25px; 
+    }
+}
+
