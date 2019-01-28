@@ -60,10 +60,11 @@ get_header(); ?>
 									// Templates realisations
 									?> 
 									<div class="realisation">
-										<?php get_template_part( 'partials/single/layout', get_post_type() );
-										the_terms( $post->ID, 'langages', 'Langages : ' ) ;  ?> <br>
-										<?php the_terms( $post->ID, 'annees', 'Année(s) du projet : ' ) ; ?><br> 
-										<?php the_terms( $post->ID, 'framework', 'Framework(s) : ' ) ; ?> <br>
+										<a href="<?php the_permalink(); ?>">
+											<?php the_post_thumbnail() ?>
+											<p><?php the_title() ?></p>
+										</a>
+										<br>
 									</div>
 									<?php
 								} 

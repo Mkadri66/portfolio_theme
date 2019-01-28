@@ -1,10 +1,20 @@
 .realisations {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    
+    grid-template-columns: 33% 33% 33%;
+    margin: 25px;
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 100%;          
+    }
 
     .realisation {
         margin: 0 25px; 
+
+        p {
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+        }   
     }
 }
 

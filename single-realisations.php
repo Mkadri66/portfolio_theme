@@ -52,12 +52,20 @@ get_header(); ?>
 		    				}
 
 							// All other post types.
-							else {
-								// Templates realisations
-								get_template_part( 'partials/single/layout', get_post_type() );
-								the_terms( $post->ID, 'langages', 'Langages : ' ) ;  ?> <br>
-                                <?php the_terms( $post->ID, 'annees', 'Année(s) du projet : ' ) ; ?><br> 
-								<?php the_terms( $post->ID, 'framework', 'Framework(s) : ' ) ; ?> <br> 
+							else { ?>
+
+								<div class="single-realisation">
+
+									<div class="thumbnail-realisation">
+										<?php the_post_thumbnail() ?>
+									</div>
+									<h2><?php the_title() ?></h2>
+									<?php 
+									the_content();
+									the_terms( $post->ID, 'langages', 'Langages : ' ) ;  ?> <br>
+									<?php the_terms( $post->ID, 'annees', 'Année(s) du projet : ' ) ; ?><br> 
+									<?php the_terms( $post->ID, 'framework', 'Framework(s) : ' ) ; ?> <br> 
+									</div>
 								<?php
 		  					}
 
