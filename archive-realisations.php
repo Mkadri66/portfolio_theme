@@ -22,6 +22,7 @@ get_header(); ?>
 
 			<div id="content" class="site-content clr">
 
+
 				<?php do_action( 'ocean_before_content_inner' ); ?>
 
 				<?php
@@ -29,6 +30,7 @@ get_header(); ?>
 				if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_location( 'single' ) ) {
 					
 					?>
+
 					<div class="realisations">
 
 						<?php 
@@ -59,6 +61,9 @@ get_header(); ?>
 								else {
 									// Templates realisations
 									?> 
+									<h1> Réalisations </h1>
+
+									<p> Voici les projets sur lesquels j'ai pu intervenir </p>
 									<div class="realisation">
 										<a href="<?php the_permalink(); ?>">
 											<?php the_post_thumbnail() ?>
