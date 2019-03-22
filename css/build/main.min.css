@@ -24,7 +24,7 @@
   .realisations .realisation {
     margin: 0 25px; }
     .realisations .realisation p {
-      font-size: 30px;
+      font-size: 20px;
       text-align: center;
       font-weight: bold; }
 
@@ -39,4 +39,8 @@
   text-align: center;
   font-size: 40px;
   margin-top: 30px; }
+
+.oceanwp-social-icons li a:hover {
+  background-color: #42C1E7 !important;
+  border-color: #42C1E7 !important; }
 
