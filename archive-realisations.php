@@ -61,9 +61,9 @@ get_header(); ?>
 								else {
 									// Templates realisations
 									?> 
-									<h1> Réalisations </h1>
+									<!-- <h1> Réalisations </h1>
 
-									<p> Voici les projets sur lesquels j'ai pu intervenir </p>
+									<p> Voici les projets sur lesquels j'ai pu intervenir </p> -->
 									<div class="realisation">
 										<a href="<?php the_permalink(); ?>">
 											<?php the_post_thumbnail() ?>
