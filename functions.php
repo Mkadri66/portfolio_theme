@@ -19,8 +19,8 @@
  * @link http://codex.wordpress.org/Child_Themes
  */
 
-define('PORTFOLIO_CSS_VERSION', '0.0.2');
-define('PORTFOLIO_JS_VERSION', '0.0.1');
+define('PORTFOLIO_CSS_VERSION', '0.0.3');
+define('PORTFOLIO_JS_VERSION', '0.0.2');
 
 function oceanwp_child_enqueue_parent_style() {
     // Dynamically get version number of the parent stylesheet (lets browsers re-cache your stylesheet when you update your theme)
