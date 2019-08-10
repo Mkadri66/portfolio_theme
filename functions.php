@@ -19,8 +19,8 @@
  * @link http://codex.wordpress.org/Child_Themes
  */
 
-define('PORTFOLIO_CSS_VERSION', '0.0.3');
-define('PORTFOLIO_JS_VERSION', '0.0.2');
+define('PORTFOLIO_CSS_VERSION', '0.0.4');
+define('PORTFOLIO_JS_VERSION', '0.0.3');
 
 function oceanwp_child_enqueue_parent_style() {
     // Dynamically get version number of the parent stylesheet (lets browsers re-cache your stylesheet when you update your theme)
@@ -31,7 +31,7 @@ function oceanwp_child_enqueue_parent_style() {
 
     // register webpack stylesheet and js with theme
     wp_enqueue_style( 'site_main_css', get_stylesheet_directory_uri() . '/css/build/main.min.css', [] , PORTFOLIO_CSS_VERSION , 'all');
-    wp_enqueue_script( 'site_main_js', get_stylesheet_directory_uri() . '/js/build/app.js' , null , null , true );
+    wp_enqueue_script( 'site_main_js', get_stylesheet_directory_uri() . '/js/build/app.js', [] , PORTFOLIO_JS_VERSION , 'all' );
 
 }
 add_action( 'wp_enqueue_scripts', 'oceanwp_child_enqueue_parent_style' );
@@ -82,9 +82,49 @@ function portfolio_custom_post_type() {
 	
 	register_post_type( 'realisations', $args );
 
+
+	$labels = array(
+		// Le nom au pluriel
+		'name'                => _x( 'Projets', 'Post Type General Name'),
+		// Le nom au singulier
+		'singular_name'       => _x( 'Projet', 'Post Type Singular Name'),
+		// Le libellé affiché dans le menu
+		'menu_name'           => __( 'Projets'),
+		// Les différents libellés de l'administration
+		'all_items'           => __( 'Tous les projets'),
+		'view_item'           => __( 'Voir les projets'),
+		'add_new_item'        => __( 'Ajouter un nouveau projet'),
+		'add_new'             => __( 'Ajouter'),
+		'edit_item'           => __( 'Editer le projet'),
+		'update_item'         => __( 'Modifier le projet'),
+		'search_items'        => __( 'Rechercher le projet'),
+		'not_found'           => __( 'Non trouvée'),
+		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
+	);
+	
+	// Autres options sur le custom types
+	
+	$args = array(
+		'label'               => __( 'Projets'),
+		'description'         => __( 'Voici mes projets'),
+		'labels'              => $labels,
+		// On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields' ),
+		/* 
+		* Différentes options supplémentaires
+		*/	
+		'hierarchical'        => false,
+		'public'              => true,
+		'has_archive'         => true,
+		'rewrite'			  => array( 'slug' => 'projets'),
+
+	);
+
+	register_post_type( 'projets', $args );
+
 }
 
-add_action( 'init', 'portfolio_custom_post_type', 0 );
+add_action( 'init', 'portfolio_custom_post_type', 10 );
 
 
 
@@ -118,6 +158,7 @@ function portfolio_add_taxonomies() {
 	);
 
 	register_taxonomy( 'annees', 'realisations', $args_annee );
+	register_taxonomy( 'annees', 'projets', $args_annee );
 
 	// Taxonomie langages
 	$labels_langages = array(
@@ -148,6 +189,7 @@ function portfolio_add_taxonomies() {
 	);
 
 	register_taxonomy( 'langages', 'realisations', $args_langages );
+	register_taxonomy( 'langages', 'projets', $args_langages );
 	
 	// Framework utilisé pour le projet
 
@@ -177,6 +219,7 @@ function portfolio_add_taxonomies() {
 	);
 
 	register_taxonomy( 'framework', 'realisations', $args_framework );
+	register_taxonomy( 'framework', 'projets', $args_framework );
 }
 
 add_action( 'init', 'portfolio_add_taxonomies', 0 );

@@ -40,6 +40,32 @@
   font-size: 40px;
   margin-top: 30px; }
 
+.projets {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 25px; }
+  @media screen and (max-width: 768px) {
+    .projets {
+      grid-template-columns: 100%; } }
+  .projets .projet {
+    margin: 0 25px; }
+    .projets .projet p {
+      font-size: 20px;
+      text-align: center;
+      font-weight: bold; }
+
+.single-projet .thumbnail-projet {
+  width: 40%;
+  margin: 0 auto; }
+  @media screen and (max-width: 768px) {
+    .single-projet .thumbnail-projet {
+      width: 90%; } }
+
+.single-projet h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 30px; }
+
 .oceanwp-social-icons li a:hover {
   background-color: #42C1E7 !important;
   border-color: #42C1E7 !important; }
