@@ -1,0 +1,19 @@
+.projets {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 25px;
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 100%;
+    }
+
+    .projet {
+        margin: 0 25px;
+
+        p {
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+}

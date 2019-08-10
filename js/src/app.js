@@ -1,13 +1,15 @@
 import ScrollReveal from 'scrollreveal';
 
-// SLideUp - Realisations 
+// SLideUp - Realisations - Projets
 var slideUp = {
     distance: '150%',
     origin: 'bottom',
+    delay: 375,
     opacity: null
 };
 
 ScrollReveal().reveal('.realisation', slideUp);
+ScrollReveal().reveal('.projet', slideUp);
 
 // Left Right - A propos
 
